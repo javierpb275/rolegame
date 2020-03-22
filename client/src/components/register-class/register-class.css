@@ -1,0 +1,13 @@
+.select-class {
+    margin-top: 35px;
+}
+
+
+.container1 {
+    display: grid;
+    grid-gap: 100px;
+    grid-template-columns: repeat(3, 25%);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    margin-top: 100px;
+}

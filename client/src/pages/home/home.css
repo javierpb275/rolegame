@@ -1,0 +1,35 @@
+.signout {
+    color: goldenrod;
+  }
+  
+  .userInfo {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, 20%);
+      grid-template-rows: 1fr;
+      justify-items: start;
+      margin-left: 80px;
+  }
+  
+  .paragraph {
+    font-weight: 900;
+    margin-right: 100px;
+  }
+  
+  
+  .searcher {
+    margin-left: 120px;
+  }
+  
+  .fight-btn {
+      font-weight: 500;
+      border-radius: 300px;
+      background-color: rgb(255, 0, 0);
+      border-color:  rgba(255, 0, 0, 0.425);
+      color: goldenrod;
+    }
+  
+    .fight-btn:hover {
+      background-color: rgb(248, 6, 6);
+      border-color:  goldenrod;
+    }

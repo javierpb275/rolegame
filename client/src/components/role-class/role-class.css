@@ -1,0 +1,11 @@
+.classImg {
+    width: 300px;
+    height: 400px;
+    transition: all 0.5s;
+}
+
+.classImg:hover {
+    cursor:pointer;
+    box-shadow: 5px 5px 5px 5px hsla(0, 0%, 97%, 0.993);
+    transform: scale(1.08);
+}
