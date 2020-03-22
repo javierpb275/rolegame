@@ -28,22 +28,24 @@ class Signin extends React.Component {
         password: this.state.signInPassword
       })
     })
-      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+         response.json()
       .then(user => {
         if (user.id_user) {
           this.props.loadUser(user);
         }
-      });
+      })
+    })
   };
 
   render() {
-    const { hola } = this.props;
+    const { } = this.props;
     return (
       <div>
         <nav style={{ display: "flex", justifyContent: "flex-end" }}>
           <Link to="/register" style={{ textDecoration: "none" }}>
             <p
-              onClick={() => hola("hola pepe")}
               className="signin-form f3 pa3 pointer"
             >
               Register

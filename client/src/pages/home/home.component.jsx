@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import './home.css';
 
 
-const Home = () => {
+const Home = (name, class_type_name, level) => {
   return (
     <div>
         <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
@@ -14,9 +14,15 @@ const Home = () => {
         </Link>
         </nav>
         <div className='userInfo'>
-        <p className='paragraph f3 pa1'>UserName</p>
-        <p className='paragraph f3 pa1'>ClassName</p>
-        <p className='paragraph lvl f3 pa1'>Lvl: 1</p>
+        <div className='paragraph f3 pa1'>
+        {`${name}`}
+        </div>
+        <div className='paragraph f3 pa1'>
+        {`${class_type_name}`}
+          </div>
+        <div className='paragraph lvl f3 pa1'>
+        {`lvl: ${level}`}
+          </div>
         <input
         className='searcher'
         type='search'

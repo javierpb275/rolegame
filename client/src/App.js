@@ -18,14 +18,13 @@ class App extends Component {
         id_user: "",
         id_login: "",
         id_class_type: "",
-        email: "",
         name: "",
-        class_type_name: "",
         attack: "",
         hp: "",
         level: 1,
         experience: 0,
-        joined: ""
+        joined: "",
+        class_type_name: ""
       }
     };
   }
@@ -36,21 +35,17 @@ class App extends Component {
         id_user: data.id_user,
         id_login: data.id_login,
         id_class_type: data.id_class_type,
-        email: data.email,
         name: data.name,
-        class_type_name: data.class_type_name,
         attack: data.attack,
         hp: data.hp,
         level: data.level,
         experience: data.experience,
-        joined: data.joined
+        joined: data.joined,
+        class_type_name: data.class_type_name
       }
     });
   };
 
-  hola = saludar => {
-    console.log(saludar);
-  };
 
   render() {
     return (
@@ -59,16 +54,21 @@ class App extends Component {
           <Route
             exact
             path="/"
-            component={() => (
-              <Signin loadUser={this.loadUser} hola={this.hola} />
-            )}
+            component={ () => <Signin loadUser={this.loadUser} /> }
           />
           <Route
             exact
             path="/register"
-            component={() => <Register loadUser={this.loadUser} />}
+            component={ () => <Register loadUser={this.loadUser} /> }
           />
-          <Route exact path="/home" component={Home} />
+          <Route 
+          exact 
+          path="/home" 
+          component=
+          { () => <Home name={this.state.user.name} 
+          class_type_name={this.state.user.class_type_name}
+          level={this.state.user.level} /> }
+          />
         </Switch>
       </div>
     );
