@@ -1,0 +1,13 @@
+.userInfo {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 20%);
+    grid-template-rows: 1fr;
+    justify-items: start;
+    margin-left: 80px;
+}
+
+.paragraph {
+  font-weight: 900;
+  margin-right: 100px;
+}

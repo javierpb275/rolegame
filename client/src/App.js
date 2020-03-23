@@ -10,16 +10,25 @@ import warriorImg from "./assets/role-classes/warriorImg.PNG";
 import rogueImg from "./assets/role-classes/rogueImg.PNG";
 import wizardImg from "./assets/role-classes/wizardImg.PNG";
 */
-//COMPONENTS:
+
+//PAGES:
 import Signin from "./pages/signin/signin.component";
 import Register from "./pages/register/register.component";
 import Home from "./pages/home/home.component";
+/*
+//COMPONENTS:
+import Navigation from "./components/navigation/navigation.component";
+import UserInfo from "./components/user-info/user-info.component";
+import SearchBox from "./components/search-box/search-box.component";
+import FightButton from "./components/fight-button/fight-button.component";
+*/
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: "/",
+      route: 'signin',
+      isSignedIn: false,
       player_img: "",
       user: {
         id_user: "",
@@ -52,19 +61,34 @@ class App extends Component {
       }
     });
   };
+
   /*
   getPlayerImage = () => {
     const { id_class_type } = this.state.user;
     if (id_class_type === 1) {
-      return this.setState({player_img: warriorImage})
+      this.setState({player_img: warriorImage})
     } else if (id_class_type === 2) {
-      return this.setState({player_img: rogueImage})
+      this.setState({player_img: rogueImage})
   } else if (id_class_type === 3) {
-    return this.setState({player_img: wizardImage})
+    this.setState({player_img: wizardImage})
  }
+ this.setState({player_img: player_img});
 }
 */
+/*
+onRouteChange = (route) => {
+  if (route === 'signout') {
+    this.setState(initialState)
+  } else if (route === 'home') {
+    this.setState({isSignedIn: true})
+  }
+  this.setState({route: route});
+}
+*/
+
+
   render() {
+    const { route, isSignedIn } = this.state;
     return (
       <div className="App">
         <Switch>

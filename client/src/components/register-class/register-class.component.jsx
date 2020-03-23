@@ -12,11 +12,6 @@ import warriorImg from "../../assets/role-classes/warriorImg.PNG";
 import rogueImg from "../../assets/role-classes/rogueImg.PNG";
 import wizardImg from "../../assets/role-classes/wizardImg.PNG";
 
-const loadImage = image => {
-  console.log(image);
-};
-
-loadImage(warriorImg);
 
 const RoleClassDb = {
   0: {
@@ -44,15 +39,21 @@ const RegisterClass = submitFunction => {
     <div>
       <h1 className="select-class">SELECT YOUR CLASS</h1>
       <div className="container1">
-        <Link to="/home" onClick={() => submitFunction.submitFunction(1)}>
+        <div onClick={() => submitFunction.submitFunction(1)}>
+        <Link to="/home" >
           <RoleClass roleClass={RoleClassDb[0]} />
         </Link>
-        <Link to="/home" onClick={() => submitFunction.submitFunction(2)}>
+        </div>
+        <div onClick={() => submitFunction.submitFunction(2)}>
+        <Link to="/home" >
           <RoleClass roleClass={RoleClassDb[1]} />
         </Link>
-        <Link to="/home" onClick={() => submitFunction.submitFunction(3)}>
+        </div>
+        <div onClick={() => submitFunction.submitFunction(3)}>
+        <Link to="/home" >
           <RoleClass roleClass={RoleClassDb[2]} />
         </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,12 @@
+.fight-btn {
+    font-weight: 500;
+    border-radius: 300px;
+    background-color: rgb(255, 0, 0);
+    border-color:  rgba(255, 0, 0, 0.425);
+    color: goldenrod;
+  }
+
+  .fight-btn:hover {
+    background-color: rgb(248, 6, 6);
+    border-color:  goldenrod;
+  }
