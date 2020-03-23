@@ -28,26 +28,21 @@ class Signin extends React.Component {
         password: this.state.signInPassword
       })
     })
-    .then(response => response.json())
+      .then(response => response.json())
       .then(user => {
-        if (user.id_user) {
-          this.props.loadUser(user);
+        if (user[0].id_user) {
+          this.props.loadUser(user[0]);
         }
-      })
-  }
+      });
+  };
 
   render() {
-    console.log(this.props.loadUser);
-    const { } = this.props;
+    const {} = this.props;
     return (
       <div>
         <nav style={{ display: "flex", justifyContent: "flex-end" }}>
           <Link to="/register" style={{ textDecoration: "none" }}>
-            <p
-              className="signin-form f3 pa3 pointer"
-            >
-              Register
-            </p>
+            <p className="signin-form f3 pa3 pointer">Register</p>
           </Link>
         </nav>
         <h1 className="app-title">ROLEGAME</h1>
@@ -81,14 +76,12 @@ class Signin extends React.Component {
                 </div>
               </fieldset>
               <div className="">
-                <Link to="/home" style={{ textDecoration: "none" }}>
-                  <input
-                    onClick={this.onSubmitSignIn}
-                    className="signin-form b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                    type="submit"
-                    value="Sign in"
-                  />
-                </Link>
+                <input
+                  onClick={this.onSubmitSignIn}
+                  className="signin-form b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                  type="submit"
+                  value="Sign in"
+                />
               </div>
             </div>
           </main>

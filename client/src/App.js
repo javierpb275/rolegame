@@ -15,8 +15,6 @@ import Signin from "./pages/signin/signin.component";
 import Register from "./pages/register/register.component";
 import Home from "./pages/home/home.component";
 
-
-
 class App extends Component {
   constructor() {
     super();
@@ -39,8 +37,6 @@ class App extends Component {
   }
 
   loadUser = data => {
-    console.log(data);
-    console.log('estoy aqui');
     this.setState({
       user: {
         id_user: data.id_user,
@@ -55,9 +51,8 @@ class App extends Component {
         class_type_name: data.class_type_name
       }
     });
-    console.log(this.state.user);
   };
-/*
+  /*
   getPlayerImage = () => {
     const { id_class_type } = this.state.user;
     if (id_class_type === 1) {
@@ -76,21 +71,24 @@ class App extends Component {
           <Route
             exact
             path="/"
-            component={ () => <Signin loadUser={this.loadUser} /> }
+            component={() => <Signin loadUser={this.loadUser} />}
           />
           <Route
             exact
             path="/register"
-            component={ () => <Register loadUser={this.loadUser} /> }
+            component={() => <Register loadUser={this.loadUser} />}
           />
-          <Route 
-          exact 
-          path="/home" 
-          component=
-          { () => <Home name={this.state.user.name} 
-          class_type_name={this.state.user.class_type_name}
-          level={this.state.user.level} 
-          player_img={this.state.player_img}/> }
+          <Route
+            exact
+            path="/home"
+            component={() => (
+              <Home
+                name={this.state.user.name}
+                class_type_name={this.state.user.class_type_name}
+                level={this.state.user.level}
+                player_img={this.state.player_img}
+              />
+            )}
           />
         </Switch>
       </div>
