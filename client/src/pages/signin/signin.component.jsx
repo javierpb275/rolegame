@@ -28,18 +28,16 @@ class Signin extends React.Component {
         password: this.state.signInPassword
       })
     })
-      .then(response => {
-        console.log(response);
-         response.json()
+    .then(response => response.json())
       .then(user => {
         if (user.id_user) {
           this.props.loadUser(user);
         }
       })
-    })
-  };
+  }
 
   render() {
+    console.log(this.props.loadUser);
     const { } = this.props;
     return (
       <div>

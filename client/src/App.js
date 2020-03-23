@@ -4,16 +4,25 @@ import { Route, Switch } from "react-router-dom";
 //CSS:
 import "./App.css";
 
+//ASSETS:
+/*
+import warriorImg from "./assets/role-classes/warriorImg.PNG";
+import rogueImg from "./assets/role-classes/rogueImg.PNG";
+import wizardImg from "./assets/role-classes/wizardImg.PNG";
+*/
 //COMPONENTS:
 import Signin from "./pages/signin/signin.component";
 import Register from "./pages/register/register.component";
 import Home from "./pages/home/home.component";
+
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       route: "/",
+      player_img: "",
       user: {
         id_user: "",
         id_login: "",
@@ -30,6 +39,8 @@ class App extends Component {
   }
 
   loadUser = data => {
+    console.log(data);
+    console.log('estoy aqui');
     this.setState({
       user: {
         id_user: data.id_user,
@@ -44,9 +55,20 @@ class App extends Component {
         class_type_name: data.class_type_name
       }
     });
+    console.log(this.state.user);
   };
-
-
+/*
+  getPlayerImage = () => {
+    const { id_class_type } = this.state.user;
+    if (id_class_type === 1) {
+      return this.setState({player_img: warriorImage})
+    } else if (id_class_type === 2) {
+      return this.setState({player_img: rogueImage})
+  } else if (id_class_type === 3) {
+    return this.setState({player_img: wizardImage})
+ }
+}
+*/
   render() {
     return (
       <div className="App">
@@ -67,7 +89,8 @@ class App extends Component {
           component=
           { () => <Home name={this.state.user.name} 
           class_type_name={this.state.user.class_type_name}
-          level={this.state.user.level} /> }
+          level={this.state.user.level} 
+          player_img={this.state.player_img}/> }
           />
         </Switch>
       </div>
