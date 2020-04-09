@@ -24,6 +24,7 @@ import SearchBox from "./components/search-box/search-box.component";
 import FightButton from "./components/fight-button/fight-button.component";
 */
 
+
 class App extends Component {
   constructor() {
     super();
