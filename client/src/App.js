@@ -15,6 +15,7 @@ import wizardImg from "./assets/role-classes/wizardImg.PNG";
 import Signin from "./pages/signin/signin.component";
 import Register from "./pages/register/register.component";
 import Home from "./pages/home/home.component";
+
 /*
 //COMPONENTS:
 import Navigation from "./components/navigation/navigation.component";
